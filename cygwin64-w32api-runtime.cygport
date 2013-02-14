@@ -1,0 +1,19 @@
+CROSS_HOST="x86_64-pc-cygwin"
+SVN_URI="http://mingw-w64.svn.sourceforge.net/svnroot/mingw-w64"
+SVN_MODULE="mingw-w64-crt"
+SVN_BRANCH="trunk/${SVN_MODULE}"
+SVN_REV=${PV#*_svn}
+inherit cross svn
+
+NAME="cygwin64-w32api-runtime"
+VERSION=3.0b_svn5584
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="Win32 API import libs for Cygwin x86_64 toolchain"
+DESCRIPTION=
+HOMEPAGE="http://mingw-w64.sourceforge.net/"
+
+cygwin64_w32api_runtime_REQUIRES="cygwin64-w32api-headers"
+
+CYGCONF_ARGS="--enable-w32api --disable-lib32 --enable-lib64"
+MAKEOPTS+=" lib64dir=${CROSS_LIBDIR}/w32api"
