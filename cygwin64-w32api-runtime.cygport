@@ -2,7 +2,7 @@ CROSS_HOST="x86_64-pc-cygwin"
 inherit cross
 
 NAME="cygwin64-w32api-runtime"
-VERSION=3.2.0
+VERSION=4.0.4
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="Win32 API import libs for Cygwin 64bit toolchain"
@@ -10,6 +10,8 @@ DESCRIPTION=
 HOMEPAGE="http://mingw-w64.sourceforge.net/"
 SRC_URI="mirror://sourceforge/mingw-w64/mingw-w64-v${VERSION}.tar.bz2"
 SRC_DIR="mingw-w64-v${VERSION}/mingw-w64-crt"
+
+RESTRICT=strip
 
 cygwin64_w32api_runtime_REQUIRES="cygwin64-w32api-headers"
 
